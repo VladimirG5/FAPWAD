@@ -1,0 +1,57 @@
+abstract class Character
+	attributes:
+	  - int x
+	  - int y
+	  - int weaponStrength
+	  - int weaponType ?
+	  - int livesLeft
+	methods:
+	  - void Draw
+	  - void isHit
+	  - void Fire
+	  - void Move
+	  - void Die
+
+class Hero : Character
+	attributes:
+	  - int x
+	  - int y
+	  - int weaponStrength
+	  - int weaponType ?
+	  - int livesLeft
+	  - float score
+
+	methods:
+	  - void Draw
+	    // Circle area + custom appearance
+	  - void isHit
+	    // collision with enemies " bullet "
+	  - void Fire
+	    // shoots an Index
+	  - void Move
+	    //  W A S D - controling
+	  - void Die
+	    // custom animation and some pop up
+	  - void Upgrade
+	    // whenever the hero gets some Rune, he uses its advantages
+	  
+class Enemy : Character
+	attributes:
+	  - int x
+	  - int y
+	  - int weaponStrength
+	  - int weaponType ?
+	  - int livesLeft ? 
+          - int enemyType ?   
+	methods:
+	  - void Draw
+	    // depending of enemyType we have different appearance (Boss, minion)
+	  - void isHit
+	    // collision with hero's " bullet " 
+	  - void Fire
+	    // shoots a " reported list "
+	  - void Move
+	    // randomly moving inside some area
+	  - void Die
+	    // custom animation + chance of throwing Rune
+	  
