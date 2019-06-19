@@ -45,7 +45,7 @@ class Enemy : Character
           - int enemyType ?   
 	methods:
 	  - void Draw
-	    // depending of enemyType we have different appearance (Boss, minion)
+	    // appearance, depending of enemyType we have different appearance (Boss, minion)
 	  - void isHit
 	    // collision with hero's " bullet " 
 	  - void Fire
