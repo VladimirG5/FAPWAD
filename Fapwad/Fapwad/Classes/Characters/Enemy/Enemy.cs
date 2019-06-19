@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Fapwad.Classes.Obstacles;
+using System.Drawing;
+using Fapwad.Classes.AbstractClass;
+using Fapwad.Classes.MainClass;
 
 namespace Fapwad.Classes.Characters.Enemy
 {
-    public class Enemy : AbstractClass.Character
+    public class EnemyClass : AbstractClass.Character
     {
-        public Enemy(int x, int y, int demage, int lives, int HP) : base(x, y, demage, lives, HP)
+
+        public EnemyClass(int x, int y, int demage, int lives, int HP) : base(x, y, demage, lives, HP)
         {
 
         }
@@ -18,7 +22,7 @@ namespace Fapwad.Classes.Characters.Enemy
             throw new NotImplementedException();
         }
 
-        public override void Draw()
+        public override void Draw(Graphics g)
         {
             throw new NotImplementedException();
         }
@@ -28,17 +32,24 @@ namespace Fapwad.Classes.Characters.Enemy
             return base.Equals(obj);
         }
 
-        public override void Fire()
+        public override void Fire(GameClass.CHARACTER_TYPE type)
         {
+            if (type == GameClass.CHARACTER_TYPE.HERO)
+                return;
+            else
+            {
+                // TO BE DONE !
+            }
             throw new NotImplementedException();
         }
+
 
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
 
-        public override bool IsCollided(int width, int height, List<Rectangle> rectangles)
+        public override bool IsCollided(List<Obstacles.Rectangle> rectangles)
         {
             throw new NotImplementedException();
         }
@@ -48,7 +59,7 @@ namespace Fapwad.Classes.Characters.Enemy
             throw new NotImplementedException();
         }
 
-        public override void Move()
+        public override void Move(int width, int height, List<Obstacles.Rectangle> rectangles)
         {
             throw new NotImplementedException();
         }

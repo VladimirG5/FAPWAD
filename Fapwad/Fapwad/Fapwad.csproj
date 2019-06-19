@@ -49,6 +49,7 @@
     <Compile Include="Classes\AbstractClass\Character.cs" />
     <Compile Include="Classes\Characters\Enemy\Enemy.cs" />
     <Compile Include="Classes\Characters\Hero\Hero.cs" />
+    <Compile Include="Classes\MainClass\GameClass.cs" />
     <Compile Include="Classes\Obstacles\Rectangle.cs" />
     <Compile Include="Classes\Weapons\Index.cs" />
     <Compile Include="Classes\Weapons\ReportedSheet.cs" />

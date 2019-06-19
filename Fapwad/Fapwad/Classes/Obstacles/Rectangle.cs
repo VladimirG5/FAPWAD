@@ -21,7 +21,7 @@ namespace Fapwad.Classes.Obstacles
             this.Height = height;
         }
 
-        public void Draw()
+        public void Draw(System.Drawing.Graphics g)
         {
             // TO BE IMPLEMENTED
         }
