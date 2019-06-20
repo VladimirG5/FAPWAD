@@ -7,11 +7,12 @@ using Fapwad.Classes.Obstacles;
 using System.Drawing;
 using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.MainClass;
-
+using Fapwad.Classes.Weapons;
 namespace Fapwad.Classes.Characters.Enemy
 {
     public class EnemyClass : AbstractClass.Character
     {
+        public List<ReportedSheet> reportedSheets { get; set; }
 
         public EnemyClass(int x, int y, int demage, int lives, int HP) : base(x, y, demage, lives, HP)
         {
@@ -24,6 +25,7 @@ namespace Fapwad.Classes.Characters.Enemy
 
         public override void Draw(Graphics g)
         {
+            // REPORTED_SHEETS !!
             throw new NotImplementedException();
         }
 
@@ -38,6 +40,8 @@ namespace Fapwad.Classes.Characters.Enemy
                 return;
             else
             {
+                // WIDTH AND HEIGHT TO BE DECIDED
+                ReportedSheet new_ReportedSheet = new ReportedSheet(X, Y, 100, 100);
                 // TO BE DONE !
             }
             throw new NotImplementedException();
@@ -61,6 +65,7 @@ namespace Fapwad.Classes.Characters.Enemy
 
         public override void Move(int width, int height, List<Obstacles.Rectangle> rectangles)
         {
+            // REPORTED_SHEETS TO BE DONE !
             throw new NotImplementedException();
         }
 

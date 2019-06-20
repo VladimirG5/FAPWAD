@@ -8,12 +8,15 @@ using System.Drawing;
 using Fapwad.Classes;
 using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.MainClass;
+using Fapwad.Classes.Weapons;
 namespace Fapwad.Classes.Characters.Hero
 {
 
     public class HeroClass : AbstractClass.Character
 
     {
+        public List<Index> indices { get; set; }
+
         public HeroClass(int x, int y, int demage, int lives, int HP) : base(x, y, demage, lives, HP)
         {
 
@@ -25,6 +28,7 @@ namespace Fapwad.Classes.Characters.Hero
 
         public override void Draw(Graphics g)
         {
+            // INDICES TO BE DONE!
             throw new NotImplementedException();
         }
 
@@ -33,17 +37,20 @@ namespace Fapwad.Classes.Characters.Hero
             return base.Equals(obj);
         }
 
-        public override void Fire(GameClass.CHARACTER_TYPE type)
+       public override void Fire(GameClass.CHARACTER_TYPE type)
         {
             if (type == GameClass.CHARACTER_TYPE.ENEMY)
                 return;
             else
             {
+                // WIDTH AND HEIGHT TO BE DONE
+                Index new_Index = new Index(X, Y, 100, 100);
+                indices.Add(new_Index);
                 // TO BE DONE !
             }
-            throw new NotImplementedException();
+            
         }
-
+        
         public override int GetHashCode()
         {
             return base.GetHashCode();
@@ -61,6 +68,7 @@ namespace Fapwad.Classes.Characters.Hero
 
         public override void Move(int width, int height, List<Obstacles.Rectangle> rectangles)
         {
+            // INDICES TO BE DONE !
             throw new NotImplementedException();
         }
 

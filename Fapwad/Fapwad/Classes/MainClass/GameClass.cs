@@ -8,6 +8,7 @@ using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Obstacles;
 using Fapwad.Classes.AbstractClass;
 using System.Drawing;
+using Fapwad.Classes.Weapons;
 
 namespace Fapwad.Classes.MainClass
 {
@@ -15,6 +16,8 @@ namespace Fapwad.Classes.MainClass
     {
         public List<AbstractClass.Character> characters { get; set; }
         public List<Obstacles.Rectangle> Rectangles { get; set; }
+        //public List<Index> indices { get; set; }
+        //public List<ReportedSheet> reportedSheets { get; set; }
         public int Level { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
@@ -30,6 +33,8 @@ namespace Fapwad.Classes.MainClass
             this.Height = height;
             characters = new List<AbstractClass.Character>();
             Rectangles = new List<Obstacles.Rectangle>();
+            //indices = new List<Index>();
+            //reportedSheets = new List<ReportedSheet>();
         }
         public void AddCharacter(int x, int y, int demage, int lives, int HP, CHARACTER_TYPE type)
         {
@@ -80,6 +85,8 @@ namespace Fapwad.Classes.MainClass
             {
                 c.Fire(CHARACTER_TYPE.HERO);
             }
+
+
         }
         public void EnemyFires()
         {
@@ -87,6 +94,6 @@ namespace Fapwad.Classes.MainClass
             {
                 c.Fire(CHARACTER_TYPE.ENEMY);
             }
-        }
+        } 
     }
 }
