@@ -17,6 +17,7 @@ namespace Fapwad.Classes.Levels
     {
         public List<AbstractClass.Character> characters { get; set; }
         public List<Obstacles.Rectangle> Rectangles { get; set; }
+        public HeroClass Hero { get; set; }
         //public List<Index> indices { get; set; }
         //public List<ReportedSheet> reportedSheets { get; set; }
         public int ID { get; set; }
@@ -33,21 +34,17 @@ namespace Fapwad.Classes.Levels
             this.Width = width;
             this.Height = height;
             characters = new List<AbstractClass.Character>();
+            // NEED TO BE CHANGED
+            Hero = new HeroClass(55,66,66,66,66);
             Rectangles = new List<Obstacles.Rectangle>();
             //indices = new List<Index>();
             //reportedSheets = new List<ReportedSheet>();
         }
         public void AddCharacter(int x, int y, int demage, int lives, int HP, CHARACTER_TYPE type)
         {
+            // CHANGE !!
             Character c = null;
-            if (type == CHARACTER_TYPE.HERO)
-            {
-                c = new HeroClass(x, y, demage, lives, HP);
-            }
-            else if (type == CHARACTER_TYPE.ENEMY)
-            {
-                c = new EnemyClass(x, y, demage, lives, HP);
-            }
+            c = new EnemyClass(x, y, demage, lives, HP);
             characters.Add(c);
         }
         public void AddRectangle(int x, int y, int width, int height)
@@ -65,6 +62,7 @@ namespace Fapwad.Classes.Levels
             {
                 r.Draw(g);
             }
+            Hero.Draw(g);
         }
         /* public void CheckCollisions()
         {
