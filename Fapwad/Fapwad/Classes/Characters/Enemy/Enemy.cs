@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Fapwad.Classes.Obstacles;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
@@ -14,18 +15,26 @@ namespace Fapwad.Classes.Characters.Enemy
     {
         public List<ReportedSheet> reportedSheets { get; set; }
 
-        public EnemyClass(int x, int y, int demage, int lives, int HP) : base(x, y, demage, lives, HP)
+        public EnemyClass(int x, int y, int cWidth, int cHeight, int demage, int lives, int HP) : base(x, y, cWidth, cHeight, demage, lives, HP)
         {
 
         }
-        public override void Die()
+        public override Boolean Die()
         {
-            throw new NotImplementedException();
+            if (base.Health < 0)
+            {
+                return true;
+            }
+
+            return false;
+            //throw new NotImplementedException();
         }
 
         public override void Draw(Graphics g)
         {
             // REPORTED_SHEETS !!
+            Brush b = new SolidBrush(Color.Red);
+            g.FillRectangle(b,X,Y,characterWidth,characterHeight);
             throw new NotImplementedException();
         }
 
@@ -42,6 +51,7 @@ namespace Fapwad.Classes.Characters.Enemy
             {
                 // WIDTH AND HEIGHT TO BE DECIDED
                 ReportedSheet new_ReportedSheet = new ReportedSheet(X, Y, 100, 100);
+                reportedSheets.Add(new_ReportedSheet);
                 // TO BE DONE !
             }
             throw new NotImplementedException();
@@ -53,18 +63,39 @@ namespace Fapwad.Classes.Characters.Enemy
             return base.GetHashCode();
         }
 
+        private bool distance(int recX, int recY, int recWidth, int recHeight)
+        {
+            return this.X > recX &&
+                   this.X < recX + recWidth &&
+                   this.Y > recY &&
+                   this.Y < recY + recHeight;
+
+        }
+
         public override bool IsCollided(List<Obstacles.Rectangle> rectangles)
         {
+            foreach(Obstacles.Rectangle rec in rectangles)
+            {
+                return distance(rec.X, rec.Y, rec.Width, rec.Height);
+
+            }
+
             throw new NotImplementedException();
         }
 
-        public override void IsHit(float x, float y)
+        public override bool IsHit(List<Index> indeksi)
         {
+            foreach (Index i in indeksi)
+            {
+                return distance(i.X, i.Y, i.Width, i.Height);
+
+            }
             throw new NotImplementedException();
         }
 
         public override void Move(int width, int height, List<Obstacles.Rectangle> rectangles)
         {
+
             // REPORTED_SHEETS TO BE DONE !
             throw new NotImplementedException();
         }

@@ -21,7 +21,7 @@ namespace Fapwad.Classes.Characters.Hero
         {
 
         }
-        public override void Die()
+        public override bool Die()
         {
             throw new NotImplementedException();
         }
