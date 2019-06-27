@@ -21,6 +21,7 @@ namespace Fapwad.Classes.Characters.Hero
         public bool isDead { get; set; }    
         public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP) : base(x, y, characterWidth, characterHeight, demage, HP)
         {
+            indices = new List<Index>();
             isDead = false;
         }
         public override void Die()
@@ -36,8 +37,13 @@ namespace Fapwad.Classes.Characters.Hero
         {
             Brush b = new SolidBrush(Color.Blue);
             g.FillRectangle(b, X, Y, characterWidth, characterHeight);
+            foreach(Index i in indices)
+            {
+                i.Draw(g);
+            }
             // INDICES TO BE DONE!
-            throw new NotImplementedException();
+            b.Dispose();
+          
         }
 
         public override bool Equals(object obj)
@@ -45,24 +51,17 @@ namespace Fapwad.Classes.Characters.Hero
             return base.Equals(obj);
         }
 
-       public override void Fire(Level.CHARACTER_TYPE type)
+       public override void Fire()
         {
-            if (type == Level.CHARACTER_TYPE.ENEMY)
-                return;
-            else
-            {
+          
                 // WIDTH AND HEIGHT TO BE DONE
-                Index new_Index = new Index(X, Y, 100, 100);
+                Index new_Index = new Index(X + 12, Y - 50, 25, 50);
                 indices.Add(new_Index);
                 // TO BE DONE !
-            }
+            
             
         }
-        
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+     
 
         private bool distance(int recX, int recY, int recWidth, int recHeight)
         {
@@ -85,7 +84,7 @@ namespace Fapwad.Classes.Characters.Hero
             }
 
             return false;
-            //throw new NotImplementedException();
+         
         }
 
         
@@ -99,13 +98,15 @@ namespace Fapwad.Classes.Characters.Hero
                 i.HitAnEnemy(enemies);
             }
 
-            for (int i = 0; i < rectangles.Count; i++)
-            {
-                if (indices[i].colided)
+               for (int i = 0; i < indices.Count; i++)
                 {
-                    indices.RemoveAt(i);
+                    if (indices[i].colided)
+                    {
+                        indices.RemoveAt(i);
+                    }
                 }
-            }
+            
+            
         }
 
         public void Hurt(int demage)
@@ -121,7 +122,7 @@ namespace Fapwad.Classes.Characters.Hero
             if (direction == "UP")
             {
                 this.Y -= 10;
-                if (IsCollided(rectangles))
+                if (IsCollided(rectangles) || this.Y < 0)
                 {
                     this.Y = oldY;
                 }
@@ -129,7 +130,7 @@ namespace Fapwad.Classes.Characters.Hero
             if (direction == "DOWN")
             {
                 this.Y += 10;
-                if (IsCollided(rectangles))
+                if (IsCollided(rectangles) || this.Y > height)
                 {
                     this.Y = oldY;
                 }
@@ -137,7 +138,7 @@ namespace Fapwad.Classes.Characters.Hero
             if (direction == "LEFT")
             {
                 this.X -= 10;
-                if (IsCollided(rectangles))
+                if (IsCollided(rectangles) || this.X < 0)
                 {
                     this.X = oldX;
                 }
@@ -145,11 +146,13 @@ namespace Fapwad.Classes.Characters.Hero
             if (direction == "RIGHT")
             {
                 this.X += 10;
-                if (IsCollided(rectangles))
+                if (IsCollided(rectangles) || this.X > width)
                 {
                     this.X = oldX;
                 }
+
             }
+
             // INDICES TO BE DONE !
             
         }

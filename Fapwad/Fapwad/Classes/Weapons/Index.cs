@@ -17,9 +17,8 @@ namespace Fapwad.Classes.Weapons
         public int indexHeight { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-
         public bool colided { get; set; }
-        //public Boolean isCollided { get; set; }
+
         public Index(int x, int y, int width, int height)
         {
             this.X = x;
@@ -28,6 +27,7 @@ namespace Fapwad.Classes.Weapons
             this.indexHeight = 50;
             this.Width = width;
             this.Height = height;
+            this.colided = false;
 
         }
 
@@ -35,8 +35,8 @@ namespace Fapwad.Classes.Weapons
         {
             // TO BE IMPLEMENTED
             Brush solid = new SolidBrush(Color.Red);
-            g.FillRectangle(solid, X + 12, Y - 50, indexWidth, indexHeight);
-            g.Dispose();
+            g.FillRectangle(solid, X, Y, indexWidth, indexHeight);
+            solid.Dispose();
         }
         public void Move()
         {
@@ -51,6 +51,7 @@ namespace Fapwad.Classes.Weapons
                 if (IsHit(enemy.X, enemy.Y, enemy.characterWidth, enemy.characterHeight))
                 {
                     colided = true;
+                    enemy.Hurt(15);
                     break;
                 }
             }
@@ -60,7 +61,7 @@ namespace Fapwad.Classes.Weapons
         {
             // TO BE IMPLEMENTED
             // Checking the window
-            if (this.X < 0 || this.X > Width || this.Y < indexHeight || this.Y > Height - indexHeight)
+            if (this.X < 0 || this.X > 800 || this.Y < 0)
             {
                 colided = true;
             }

@@ -88,6 +88,16 @@ namespace Fapwad.Classes.Levels
             }
             
         }
+        public void Dying()
+        {
+            for(int i = 0; i < characters.Count; i++)
+            {
+                if (characters[i].isDead)
+                {
+                    characters.RemoveAt(i);
+                }
+            }
+        }
         public void Draw(Graphics g)
         {
             foreach (EnemyClass c in characters)
@@ -100,18 +110,12 @@ namespace Fapwad.Classes.Levels
             }
             Hero.Draw(g);
         }
-        /* public void CheckCollisions()
-        {
-            foreach(AbstractClass.Character c in characters)
-            {
-                c.IsCollided(Width,Height,Rectangles);
-            }
-        } */
+       
         public void MoveObjects()
         {
             foreach (EnemyClass c in characters)
             {
-                c.Move(100, 100, 500, 500);
+                c.Move(0, 0, 800, 500);
                 c.MoveSheets(Rectangles, Hero);
             }
 
@@ -122,20 +126,13 @@ namespace Fapwad.Classes.Levels
         {
             Hero.Move(Width,Height,direction,Rectangles);
         }
-        public void HeroFires()
-        {
-            foreach (AbstractClass.Character c in characters)
-            {
-                c.Fire(CHARACTER_TYPE.HERO);
-            }
-
-
-        }
+        
         public void EnemyFires()
         {
-            foreach (AbstractClass.Character c in characters)
+            int br = rand.Next(0, characters.Count);
+            for(int i = 0; i < br; i++)
             {
-                c.Fire(CHARACTER_TYPE.ENEMY);
+                characters[i].Fire();
             }
         }
     }

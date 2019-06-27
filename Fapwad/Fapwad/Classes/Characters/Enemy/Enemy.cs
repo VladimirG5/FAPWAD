@@ -29,6 +29,7 @@ namespace Fapwad.Classes.Characters.Enemy
             velocityX = (Math.Cos(Angle) * velocity);
             velocityY = (Math.Sin(Angle) * velocity);
             isDead = false;
+            reportedSheets = new List<ReportedSheet>();
         }
         public override void Die()
         {
@@ -46,17 +47,20 @@ namespace Fapwad.Classes.Characters.Enemy
             // REPORTED_SHEETS !!
             Brush b = new SolidBrush(Color.Red);
             g.FillRectangle(b,X,Y,characterWidth,characterHeight);
-            
+            foreach(ReportedSheet sheet in reportedSheets)
+            {
+                sheet.Draw(g);
+            }
+
+            b.Dispose();
         }
 
        
 
-        public override void Fire(Level.CHARACTER_TYPE type)
+        public override void Fire()
         {
-            if (type == Level.CHARACTER_TYPE.HERO)
-                return;
-
-            ReportedSheet new_ReportedSheet = new ReportedSheet(X, Y, 25, 50);
+            
+            ReportedSheet new_ReportedSheet = new ReportedSheet(X + 12, Y + 50, 25, 50);
             reportedSheets.Add(new_ReportedSheet);
             
         }
@@ -82,13 +86,16 @@ namespace Fapwad.Classes.Characters.Enemy
                 sheet.HitAHero(Hero, this.WeaponStrength);
             }
 
-            for (int i = 0; i < reportedSheets.Count; i++)
-            {
-                if (reportedSheets[i].colided)
+            
+                for (int i = 0; i < reportedSheets.Count; i++)
                 {
-                    reportedSheets.RemoveAt(i);
+                    if (reportedSheets[i].colided)
+                    {
+                        reportedSheets.RemoveAt(i);
+                    }
                 }
-            }
+           
+            
         }
 
         public override bool IsCollided(List<Obstacles.Rectangle> rectangles)
@@ -103,7 +110,7 @@ namespace Fapwad.Classes.Characters.Enemy
 
             return false;
 
-            throw new NotImplementedException();
+           
         }
 
         
@@ -112,9 +119,9 @@ namespace Fapwad.Classes.Characters.Enemy
         {
             int nextX = (int)(this.X + velocityX);
             int nextY = (int)(this.Y + velocityY);
-            int lft = left + characterWidth;
+            int lft = left;
             int rgt = left + width - characterWidth;
-            int tp = top + characterHeight;
+            int tp = top;
             int btm = top + height - characterHeight;
 
             if (nextX <= lft)

@@ -34,8 +34,8 @@ namespace Fapwad.Classes.Weapons
         {
             // TO BE IMPLEMENTED
             Brush solid = new SolidBrush(Color.Black);
-            g.FillRectangle(solid, X + 12, Y + 100, reportedSheetWidth, reportedSheetHeight);
-            g.Dispose();
+            g.FillRectangle(solid, X, Y, reportedSheetWidth, reportedSheetHeight);
+            solid.Dispose();
         }
         public void Move()
         {
@@ -52,21 +52,21 @@ namespace Fapwad.Classes.Weapons
             }
         }
 
-        public Boolean IsCollided(List<Obstacles.Rectangle> rectangles)
+        public void IsCollided(List<Obstacles.Rectangle> rectangles)
         {
             // TO BE IMPLEMENTED
-            if (this.X < 0 || this.X > Width || this.Y < reportedSheetHeight || this.Y > Height)
+            if (this.X > 800|| this.Y > 1000)
             {
-                return true;
+                colided =  true;
             }
             foreach (Obstacles.Rectangle r in rectangles)
             {
                 if (IsHit(r.X, r.Y , r.Width , r.Height))
                 {
-                    return true;
+                    colided =  true;
                 }
             }
-            return false;
+            
             
         }
         private bool IsHit(int recX, int recY, int recWidth, int recHeight)

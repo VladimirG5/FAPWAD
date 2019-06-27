@@ -30,7 +30,7 @@ namespace Fapwad.Classes.AbstractClass
         }
 
         public abstract void Draw(System.Drawing.Graphics g);
-        public abstract void Fire(Level.CHARACTER_TYPE type);
+        public abstract void Fire();
         public abstract void Die();
 
         public abstract Boolean IsCollided(List<Obstacles.Rectangle> rectangles);
