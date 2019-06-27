@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Obstacles;
 
 namespace Fapwad.Classes.Weapons
@@ -16,6 +18,7 @@ namespace Fapwad.Classes.Weapons
         public int Height { get; set; }
         public int reportedSheetWidth { get; set; }
         public int reportedSheetHeight { get; set; }
+        public bool colided { get; set; }
         public ReportedSheet(int x, int y, int width, int height)
         {
             this.X = x;
@@ -24,6 +27,7 @@ namespace Fapwad.Classes.Weapons
             this.Height = height;
             this.reportedSheetWidth = 25;
             this.reportedSheetHeight = 50;
+            colided = false;
         }
 
         public void Draw(Graphics g)
@@ -38,6 +42,16 @@ namespace Fapwad.Classes.Weapons
             // TO BE IMPLEMENTED
             this.Y = Y + 5;
         }
+
+        public void HitAHero(HeroClass Hero, int demage)
+        {
+            if (IsHit(Hero.X, Hero.Y, Hero.characterWidth, Hero.characterHeight))
+            {
+                colided = true;
+                Hero.Hurt(demage);
+            }
+        }
+
         public Boolean IsCollided(List<Obstacles.Rectangle> rectangles)
         {
             // TO BE IMPLEMENTED
@@ -47,7 +61,7 @@ namespace Fapwad.Classes.Weapons
             }
             foreach (Obstacles.Rectangle r in rectangles)
             {
-                if (IsHit(r))
+                if (IsHit(r.X, r.Y , r.Width , r.Height))
                 {
                     return true;
                 }
@@ -55,13 +69,12 @@ namespace Fapwad.Classes.Weapons
             return false;
             
         }
-        public bool IsHit(Obstacles.Rectangle rect)
+        private bool IsHit(int recX, int recY, int recWidth, int recHeight)
         {
-            // TO BE IMPLEMENTED
-            return (rect.X < this.X + this.Width) &&
-            (this.X < (rect.X + rect.Width)) &&
-            (rect.Y < this.Y + this.Height) &&
-            (this.Y < rect.Y + rect.Height);
+            return (recX < this.X + this.Width) &&
+                   (this.X < (recX + recWidth)) &&
+                   (recY < this.Y + this.Height) &&
+                   (this.Y < recY + recHeight);
 
         }
     }

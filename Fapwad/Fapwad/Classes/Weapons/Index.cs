@@ -5,6 +5,8 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using Fapwad.Classes;
+using Fapwad.Classes.Characters.Enemy;
+
 namespace Fapwad.Classes.Weapons
 {
     public class Index
@@ -15,6 +17,8 @@ namespace Fapwad.Classes.Weapons
         public int indexHeight { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+
+        public bool colided { get; set; }
         //public Boolean isCollided { get; set; }
         public Index(int x, int y, int width, int height)
         {
@@ -39,30 +43,60 @@ namespace Fapwad.Classes.Weapons
             // TO BE IMPLEMENTED
             this.Y = Y - 5;
         }
-        public Boolean IsCollided(List<Obstacles.Rectangle> rectangles)
+
+        public void HitAnEnemy(List<EnemyClass> enemies)
+        {
+            foreach (EnemyClass enemy in enemies)
+            {
+                if (IsHit(enemy.X, enemy.Y, enemy.characterWidth, enemy.characterHeight))
+                {
+                    colided = true;
+                    break;
+                }
+            }
+        }
+
+        public void IsCollided(List<Obstacles.Rectangle> rectangles)
         {
             // TO BE IMPLEMENTED
             // Checking the window
             if (this.X < 0 || this.X > Width || this.Y < indexHeight || this.Y > Height - indexHeight)
             {
-                return true;
+                colided = true;
             }
             foreach(Obstacles.Rectangle r in rectangles)
             {
-                if (IsHit(r))
+                if (IsHit(r.X, r.Y, r.Width, r.Height))
                 {
-                    return true;
+                    colided = true;
+                    break;
                 }
             }
-            return false;
+            
 
         }
-        public bool IsHit(Obstacles.Rectangle rect)
+
+        public void HitAnEnemy(List<EnemyClass> enemies, int demage)
         {
-            return (rect.X < this.X + this.Width) &&
-            (this.X < (rect.X + rect.Width)) &&
-            (rect.Y < this.Y + this.Height) &&
-            (this.Y < rect.Y + rect.Height);
+            foreach (EnemyClass enemy in enemies)
+            {
+                if (IsHit(enemy.X, enemy.Y, enemy.characterWidth, enemy.characterHeight))
+                {
+                    enemy.Hurt(demage);
+                    break;
+                }
+                
+            }
+            
+        }
+
+        private bool IsHit(int recX, int recY, int recWidth, int recHeight)
+        {
+            return (recX < this.X + this.Width) &&
+                   (this.X < (recX + recWidth)) &&
+                   (recY < this.Y + this.Height) &&
+                   (this.Y < recY + recHeight);
+
         }
     }
 }
