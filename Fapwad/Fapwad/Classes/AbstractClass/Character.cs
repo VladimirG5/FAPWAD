@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Fapwad.Classes.MainClass;
+using Fapwad.Classes.Levels;
 namespace Fapwad.Classes.AbstractClass
 {
     public abstract class Character
@@ -27,7 +27,7 @@ namespace Fapwad.Classes.AbstractClass
 
         public abstract void Draw(System.Drawing.Graphics g);
         public abstract void IsHit(float x, float y);
-        public abstract void Fire(GameClass.CHARACTER_TYPE type);
+        public abstract void Fire(Level.CHARACTER_TYPE type);
         public abstract void Die();
         public abstract void Move(int width, int height, List<Obstacles.Rectangle> rectangles);
         public abstract Boolean IsCollided(List<Obstacles.Rectangle> rectangles);

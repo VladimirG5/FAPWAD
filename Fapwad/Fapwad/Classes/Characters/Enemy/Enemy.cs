@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Fapwad.Classes.Obstacles;
 using System.Drawing;
 using Fapwad.Classes.AbstractClass;
-using Fapwad.Classes.MainClass;
+using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
 namespace Fapwad.Classes.Characters.Enemy
 {
@@ -34,9 +34,9 @@ namespace Fapwad.Classes.Characters.Enemy
             return base.Equals(obj);
         }
 
-        public override void Fire(GameClass.CHARACTER_TYPE type)
+        public override void Fire(Level.CHARACTER_TYPE type)
         {
-            if (type == GameClass.CHARACTER_TYPE.HERO)
+            if (type == Level.CHARACTER_TYPE.HERO)
                 return;
             else
             {
