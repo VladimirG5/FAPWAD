@@ -8,3 +8,13 @@ C:\Users\vladi\OneDrive\Desktop\VP-proekt\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.
 C:\Users\vladi\OneDrive\Desktop\VP-proekt\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.CoreCompileInputs.cache
 C:\Users\vladi\OneDrive\Desktop\VP-proekt\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.exe
 C:\Users\vladi\OneDrive\Desktop\VP-proekt\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.pdb
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\bin\Debug\Fapwad.exe.config
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\bin\Debug\Fapwad.exe
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\bin\Debug\Fapwad.pdb
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csprojAssemblyReference.cache
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.Form1.resources
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.Properties.Resources.resources
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.GenerateResource.cache
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.CoreCompileInputs.cache
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.exe
+C:\Users\vladi\OneDrive\Desktop\VP-ProektV2\FAPWAD\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.pdb

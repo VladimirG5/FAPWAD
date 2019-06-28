@@ -10,6 +10,9 @@ using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
+using Fapwad.Properties;
+using System.Reflection;
+
 namespace Fapwad.Classes.Characters.Enemy
 {
     public class EnemyClass : AbstractClass.Character
@@ -22,7 +25,7 @@ namespace Fapwad.Classes.Characters.Enemy
         private double velocityY;
         Random rand = new Random();
         public bool isDead { get; set; }    
-        public EnemyClass(int x, int y, int characterWidth, int characterHeight, int demage, int HP) : base(x, y, characterWidth, characterHeight, demage, HP)
+        public EnemyClass(int x, int y, int characterWidth, int characterHeight, int demage, int HP, String ImagePath) : base(x, y, characterWidth, characterHeight, demage, HP, ImagePath)
         {
             velocity = 10;
             Angle = rand.NextDouble() * 2 * Math.PI;
@@ -44,15 +47,13 @@ namespace Fapwad.Classes.Characters.Enemy
 
         public override void Draw(Graphics g)
         {
-            // REPORTED_SHEETS !!
-            Brush b = new SolidBrush(Color.Red);
-            g.FillRectangle(b,X,Y,characterWidth,characterHeight);
+            Object O = Resources.ResourceManager.GetObject(ImagePath);
+            Image image = new Bitmap((Image)O);
+            g.DrawImageUnscaled(image, X, Y);
             foreach(ReportedSheet sheet in reportedSheets)
             {
                 sheet.Draw(g);
             }
-
-            b.Dispose();
         }
 
        

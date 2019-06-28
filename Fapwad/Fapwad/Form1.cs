@@ -22,11 +22,13 @@ namespace Fapwad
             gameClass = new GameClass();
             this.count = 0;
             this.DoubleBuffered = true;
+            this.BackgroundImage = Properties.Resources.Level1;
             InitializeComponent();
             timer = new Timer();
             timer.Enabled = true;
             timer.Interval = 50;
-            this.Height = 1080;
+            this.Location = new Point(0, 0);
+            this.Height = 1000;
             this.Width = 1000;
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
@@ -52,43 +54,50 @@ namespace Fapwad
             {
                 gameClass.MoveHero("RIGHT");
             }
-            else if (e.KeyCode.Equals(Keys.Space))
-            {
-                gameClass.HeroFires();
-            }
+            
             Invalidate(true);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(gameClass.currentLevel.ID == 2)
+            {
+                this.BackgroundImage = Properties.Resources.Level2;
+            }
+            if(gameClass.currentLevel.ID == 3)
+            {
+                this.BackgroundImage = Properties.Resources.Level3;
+            }
             count++;
             gameClass.MoveObjects();
-            if(count % 5 == 0)
-                gameClass.EnemyFires();
             gameClass.currentLevel.Dying();
+
+            gameClass.CheckLevel();
+            if(count % 10 == 0)
+                gameClass.EnemyFires();
+           
             Invalidate(true);
 
         }
-        /*
-         *  private void timer1_Tick(object sender, EventArgs e)
-        {
-            gameClass.MoveObjects();
-            gameClass.EnemyFires();
-            Invalidate(true);
-
-        }
-         * */
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.White);
+            //e.Graphics.Clear(Color.Gray);
             gameClass.Draw(e.Graphics);
-            //Invalidate();
+            
         }
 
         private void Form1_Resize(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                gameClass.HeroFires();
+                Invalidate(true);
+            }
         }
     }
 }

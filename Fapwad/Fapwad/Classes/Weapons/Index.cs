@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using Fapwad.Classes;
+using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Characters.Enemy;
 
 namespace Fapwad.Classes.Weapons
@@ -44,7 +45,7 @@ namespace Fapwad.Classes.Weapons
             this.Y = Y - 5;
         }
 
-        public void HitAnEnemy(List<EnemyClass> enemies)
+        public void HitAnEnemy(List<EnemyClass> enemies, HeroClass Hero)
         {
             foreach (EnemyClass enemy in enemies)
             {
@@ -52,6 +53,7 @@ namespace Fapwad.Classes.Weapons
                 {
                     colided = true;
                     enemy.Hurt(15);
+                    Hero.GradeUp(false);
                     break;
                 }
             }

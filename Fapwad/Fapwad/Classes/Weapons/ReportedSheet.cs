@@ -49,6 +49,7 @@ namespace Fapwad.Classes.Weapons
             {
                 colided = true;
                 Hero.Hurt(demage);
+                Hero.GradeUp(true);
             }
         }
 

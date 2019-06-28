@@ -11,6 +11,7 @@ using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.Characters.Enemy;
 using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
+using Fapwad.Properties;
 namespace Fapwad.Classes.Characters.Hero
 {
 
@@ -19,10 +20,12 @@ namespace Fapwad.Classes.Characters.Hero
     {
         public List<Index> indices { get; set; }
         public bool isDead { get; set; }    
-        public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP) : base(x, y, characterWidth, characterHeight, demage, HP)
+        public double Grade { get; set; }
+        public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP, String ImagePath) : base(x, y, characterWidth, characterHeight, demage, HP, ImagePath)
         {
             indices = new List<Index>();
             isDead = false;
+            Grade = 5.0;
         }
         public override void Die()
         {
@@ -32,18 +35,22 @@ namespace Fapwad.Classes.Characters.Hero
             }
             
         }
-
+       
         public override void Draw(Graphics g)
         {
-            Brush b = new SolidBrush(Color.Blue);
-            g.FillRectangle(b, X, Y, characterWidth, characterHeight);
-            foreach(Index i in indices)
+
+            Object O = Resources.ResourceManager.GetObject(ImagePath);
+            Image image = new Bitmap((Image)O);
+            /* g.DrawImageUnscaled(image, X, Y);
+            Image image = new Bitmap(Properties.Resources.Untitled);*/
+            TextureBrush tBrush = new TextureBrush(image);
+            tBrush.WrapMode = System.Drawing.Drawing2D.WrapMode.Tile;
+
+            g.FillRectangle(tBrush, X, Y, characterWidth, characterHeight);
+            foreach (Index i in indices)
             {
                 i.Draw(g);
             }
-            // INDICES TO BE DONE!
-            b.Dispose();
-          
         }
 
         public override bool Equals(object obj)
@@ -95,7 +102,7 @@ namespace Fapwad.Classes.Characters.Hero
             {
                 i.Move();
                 i.IsCollided(rectangles);
-                i.HitAnEnemy(enemies);
+                i.HitAnEnemy(enemies,this);
             }
 
                for (int i = 0; i < indices.Count; i++)
@@ -146,15 +153,23 @@ namespace Fapwad.Classes.Characters.Hero
             if (direction == "RIGHT")
             {
                 this.X += 10;
-                if (IsCollided(rectangles) || this.X > width)
+                if (IsCollided(rectangles) || this.X > width - characterWidth)
                 {
                     this.X = oldX;
                 }
 
             }
 
-            // INDICES TO BE DONE !
             
+        }
+        public void GradeUp(bool isHit)
+        {
+            if (isHit && Grade > 5)
+                this.Grade -= 0.5;
+            else if (!isHit && Grade < 10)
+            {
+                this.Grade += 0.5;
+            }
         }
 
         public override string ToString()

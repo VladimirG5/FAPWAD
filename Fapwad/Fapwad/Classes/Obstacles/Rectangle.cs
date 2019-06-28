@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
+using Fapwad.Properties;
 
 namespace Fapwad.Classes.Obstacles
 {
@@ -14,10 +15,11 @@ namespace Fapwad.Classes.Obstacles
         public int Y { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+        public String obstaclePath { get; set; }
 
-        public Rectangle(int x, int y, int width, int height)
+        public Rectangle(int x, int y, int width, int height, String obstaclePath)
         {
-            
+            this.obstaclePath = obstaclePath;
             this.X = x;
             this.Y = y;
             this.Width = width;
@@ -26,9 +28,10 @@ namespace Fapwad.Classes.Obstacles
 
         public void Draw(System.Drawing.Graphics g)
         {
-            Brush solid = new SolidBrush(Color.Red);
-            g.FillRectangle(solid, this.X, this.Y, this.Width, this.Height);
-
+            
+            Object O = Resources.ResourceManager.GetObject(obstaclePath);
+            Image image = new Bitmap((Image)O);
+            g.DrawImageUnscaled(image, X, Y);
         }
     }
 }

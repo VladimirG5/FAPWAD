@@ -16,10 +16,9 @@ namespace Fapwad.Classes.AbstractClass
         public int Health { get; set; }
         public int characterWidth { get; set; }
         public int characterHeight { get; set; }
+        public String ImagePath { get; set; }
         
-        // public int WeaponType { get; set; }
-
-        public Character(int x, int y, int characterWidth, int characterHeight, int demage, int HP)
+        public Character(int x, int y, int characterWidth, int characterHeight, int demage, int HP, String ImagePath)
         {
             this.X = x;
             this.Y = y;
@@ -27,6 +26,8 @@ namespace Fapwad.Classes.AbstractClass
             this.characterHeight = characterHeight;
             this.WeaponStrength = demage;
             this.Health = HP;
+            this.ImagePath = ImagePath;
+            
         }
 
         public abstract void Draw(System.Drawing.Graphics g);

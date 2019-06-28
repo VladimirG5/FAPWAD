@@ -73,6 +73,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +88,41 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\al3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ogradaMini_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ogradaMini_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level2Spoen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level3Spoen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level1Spoen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level1_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Level1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
