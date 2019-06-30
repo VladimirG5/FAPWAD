@@ -7,7 +7,6 @@ using Fapwad.Classes.Obstacles;
 using System.Drawing;
 using System.Windows.Forms;
 using Fapwad.Classes;
-using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.Characters.Enemy;
 using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
@@ -15,19 +14,35 @@ using Fapwad.Properties;
 namespace Fapwad.Classes.Characters.Hero
 {
 
-    public class HeroClass : AbstractClass.Character
+    public class HeroClass
 
     {
-        public List<Index> indices { get; set; }
-        public bool isDead { get; set; }    
-        public double Grade { get; set; }
-        public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP, String ImagePath) : base(x, y, characterWidth, characterHeight, demage, HP, ImagePath)
+        public int X;
+        public int Y;
+        public int WeaponStrength;
+        public int Health;
+        public int characterWidth;
+        public int characterHeight;
+        public String ImagePath;
+
+        public List<Index> indices;
+        public bool isDead;
+        public double Grade;
+        public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP, String ImagePath) 
         {
+            this.X = x;
+            this.Y = y;
+            this.characterWidth = characterWidth;
+            this.characterHeight = characterHeight;
+            this.WeaponStrength = demage;
+            this.Health = HP;
+            this.ImagePath = ImagePath;
+
             indices = new List<Index>();
             isDead = false;
             Grade = 5.0;
         }
-        public override void Die()
+        public  void Die()
         {
             if (Health < 0)
             {
@@ -36,29 +51,25 @@ namespace Fapwad.Classes.Characters.Hero
             
         }
        
-        public override void Draw(Graphics g)
+        public  void Draw(Graphics g)
         {
 
             Object O = Resources.ResourceManager.GetObject(ImagePath);
             Image image = new Bitmap((Image)O);
-            /* g.DrawImageUnscaled(image, X, Y);
-            Image image = new Bitmap(Properties.Resources.Untitled);*/
+             g.DrawImageUnscaled(image, X, Y);
+            /*Image image = new Bitmap(Properties.Resources.Untitled);
             TextureBrush tBrush = new TextureBrush(image);
-            tBrush.WrapMode = System.Drawing.Drawing2D.WrapMode.Tile;
+            tBrush.WrapMode = System.Drawing.Drawing2D.WrapMode.Clamp;
 
-            g.FillRectangle(tBrush, X, Y, characterWidth, characterHeight);
+            g.FillRectangle(tBrush, X, Y, characterWidth, characterHeight);*/
             foreach (Index i in indices)
             {
                 i.Draw(g);
             }
         }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
 
-       public override void Fire()
+       public  void Fire()
         {
           
                 // WIDTH AND HEIGHT TO BE DONE
@@ -79,7 +90,7 @@ namespace Fapwad.Classes.Characters.Hero
 
         }
 
-        public override bool IsCollided(List<Obstacles.Rectangle> rectangles)
+        public  bool IsCollided(List<Obstacles.Rectangle> rectangles)
         {
             
             foreach (Obstacles.Rectangle rec in rectangles)
@@ -134,7 +145,7 @@ namespace Fapwad.Classes.Characters.Hero
                     this.Y = oldY;
                 }
             }
-            if (direction == "DOWN")
+           else if (direction == "DOWN")
             {
                 this.Y += 10;
                 if (IsCollided(rectangles) || this.Y > height)
@@ -142,7 +153,7 @@ namespace Fapwad.Classes.Characters.Hero
                     this.Y = oldY;
                 }
             }
-            if (direction == "LEFT")
+            else if (direction == "LEFT")
             {
                 this.X -= 10;
                 if (IsCollided(rectangles) || this.X < 0)
@@ -150,7 +161,7 @@ namespace Fapwad.Classes.Characters.Hero
                     this.X = oldX;
                 }
             }
-            if (direction == "RIGHT")
+            else
             {
                 this.X += 10;
                 if (IsCollided(rectangles) || this.X > width - characterWidth)
@@ -172,9 +183,6 @@ namespace Fapwad.Classes.Characters.Hero
             }
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+
     }
 }

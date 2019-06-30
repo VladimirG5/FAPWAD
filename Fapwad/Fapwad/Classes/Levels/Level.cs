@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Fapwad.Classes.Characters.Enemy;
 using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Obstacles;
-using Fapwad.Classes.AbstractClass;
 using System.Drawing;
 using Fapwad.Properties;
 using Fapwad.Classes.Weapons;
@@ -17,16 +16,16 @@ namespace Fapwad.Classes.Levels
     
     public class Level
     {
-        public List<EnemyClass> characters { get; set; }
-        public List<Obstacles.Rectangle> Rectangles { get; set; }
-        public HeroClass Hero { get; set; }
-        public int ID { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public String[] listOfPaths { get; set; }
-        public String levelPath { get; set; }
-        public int[] obstacleCoordinates { get; set; }
-        public String obstaclePath { get; set; }
+        public List<EnemyClass> characters;
+        public List<Obstacles.Rectangle> Rectangles;
+        public HeroClass Hero;
+        public int ID;
+        public int Width;
+        public int Height;
+        public String[] listOfPaths;
+        public String levelPath;
+        public int[] obstacleCoordinates;
+        public String obstaclePath;
         Random rand = new Random();
         public enum CHARACTER_TYPE
         {

@@ -12,13 +12,13 @@ namespace Fapwad.Classes.Weapons
 {
     public class Index
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int indexWidth { get; set; }
-        public int indexHeight { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public bool colided { get; set; }
+        public int X;
+        public int Y;
+        public int indexWidth;
+        public int indexHeight;
+        public int Width;
+        public int Height;
+        public bool colided;
 
         public Index(int x, int y, int width, int height)
         {

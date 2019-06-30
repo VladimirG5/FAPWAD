@@ -12,13 +12,13 @@ namespace Fapwad.Classes.Weapons
 {
     public class ReportedSheet
     {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public int reportedSheetWidth { get; set; }
-        public int reportedSheetHeight { get; set; }
-        public bool colided { get; set; }
+        public int X;
+        public int Y;
+        public int Width;
+        public int Height;
+        public int reportedSheetWidth;
+        public int reportedSheetHeight;
+        public bool colided;
         public ReportedSheet(int x, int y, int width, int height)
         {
             this.X = x;

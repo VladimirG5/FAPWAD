@@ -10,12 +10,12 @@ namespace Fapwad.Classes.Obstacles
 {
     public class Rectangle
     {
-        
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public String obstaclePath { get; set; }
+
+        public int X;
+        public int Y;
+        public int Width;
+        public int Height;
+        public String obstaclePath;
 
         public Rectangle(int x, int y, int width, int height, String obstaclePath)
         {

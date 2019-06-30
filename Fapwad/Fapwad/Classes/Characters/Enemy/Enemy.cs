@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Fapwad.Classes.Obstacles;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using Fapwad.Classes.AbstractClass;
 using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
@@ -15,28 +14,45 @@ using System.Reflection;
 
 namespace Fapwad.Classes.Characters.Enemy
 {
-    public class EnemyClass : AbstractClass.Character
+    public class EnemyClass 
     {
-        public List<ReportedSheet> reportedSheets { get; set; }
+        public List<ReportedSheet> reportedSheets;
 
-        public double Angle { get; set; }
+        public int X;
+        public int Y;
+        public int WeaponStrength;
+        public int Health;
+        public int characterWidth;
+        public int characterHeight;
+        public String ImagePath;
+
+        public double Angle;
         private double velocity;
         private double velocityX;
         private double velocityY;
         Random rand = new Random();
-        public bool isDead { get; set; }    
-        public EnemyClass(int x, int y, int characterWidth, int characterHeight, int demage, int HP, String ImagePath) : base(x, y, characterWidth, characterHeight, demage, HP, ImagePath)
+        public bool isDead;   
+        public EnemyClass(int x, int y, int characterWidth, int characterHeight, int demage, int HP, String ImagePath)
         {
-            velocity = 10;
+            this.X = x;
+            this.Y = y;
+            this.characterWidth = characterWidth;
+            this.characterHeight = characterHeight;
+            this.WeaponStrength = demage;
+            this.Health = HP;
+            this.ImagePath = ImagePath;
+
+
+            velocity = 5;
             Angle = rand.NextDouble() * 2 * Math.PI;
             velocityX = (Math.Cos(Angle) * velocity);
             velocityY = (Math.Sin(Angle) * velocity);
             isDead = false;
             reportedSheets = new List<ReportedSheet>();
         }
-        public override void Die()
+        public  void Die()
         {
-            if (base.Health < 0)
+            if (Health < 0)
             {
                 isDead = true;
             }
@@ -45,7 +61,7 @@ namespace Fapwad.Classes.Characters.Enemy
             
         }
 
-        public override void Draw(Graphics g)
+        public  void Draw(Graphics g)
         {
             Object O = Resources.ResourceManager.GetObject(ImagePath);
             Image image = new Bitmap((Image)O);
@@ -58,7 +74,7 @@ namespace Fapwad.Classes.Characters.Enemy
 
        
 
-        public override void Fire()
+        public  void Fire()
         {
             
             ReportedSheet new_ReportedSheet = new ReportedSheet(X + 12, Y + 50, 25, 50);
@@ -99,7 +115,7 @@ namespace Fapwad.Classes.Characters.Enemy
             
         }
 
-        public override bool IsCollided(List<Obstacles.Rectangle> rectangles)
+        public  bool IsCollided(List<Obstacles.Rectangle> rectangles)
         {
             foreach (Obstacles.Rectangle rec in rectangles)
             {

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Fapwad.Classes.Characters.Enemy;
 using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Obstacles;
-using Fapwad.Classes.AbstractClass;
 using System.Drawing;
 using Fapwad.Classes.Levels;
 using Fapwad.Classes.Weapons;
@@ -15,15 +14,15 @@ namespace Fapwad.Classes.MainClass
 {
     public class GameClass
     {
-        public Level currentLevel { get; set; }
-        public Level Levels { get; set; }
-        private HeroClass Hero { get; set; }
-        public int ID { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public int Points { get; set; }
-        public String[] listOfStrings { get; set; }
-        public int[] coordinates { get; set; }
+        public Level currentLevel;
+        public Level Levels;
+        private HeroClass Hero;
+        public int ID;
+        public int Width;
+        public int Height;
+        public int Points;
+        public String[] listOfStrings;
+        public int[] coordinates;
 
 
         public GameClass()
