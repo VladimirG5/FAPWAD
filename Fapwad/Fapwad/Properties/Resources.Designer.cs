@@ -63,9 +63,9 @@ namespace Fapwad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap al3 {
+        internal static System.Drawing.Bitmap fprofMini {
             get {
-                object obj = ResourceManager.GetObject("al3", resourceCulture);
+                object obj = ResourceManager.GetObject("fprofMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace Fapwad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Hero {
+        internal static System.Drawing.Bitmap GraveMini {
             get {
-                object obj = ResourceManager.GetObject("Hero", resourceCulture);
+                object obj = ResourceManager.GetObject("GraveMini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap heroMini_back {
+            get {
+                object obj = ResourceManager.GetObject("heroMini_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,16 +96,6 @@ namespace Fapwad.Properties {
         internal static System.Drawing.Bitmap Level1 {
             get {
                 object obj = ResourceManager.GetObject("Level1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Level1_1 {
-            get {
-                object obj = ResourceManager.GetObject("Level1_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Fapwad.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap student {
+        internal static System.Drawing.Bitmap profMini {
             get {
-                object obj = ResourceManager.GetObject("student", resourceCulture);
+                object obj = ResourceManager.GetObject("profMini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

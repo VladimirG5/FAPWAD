@@ -118,31 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="al3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\al3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="student" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Level2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Level2Spoen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Level3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Level3Spoen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ogradaMini_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ogradaMini_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ogradaMini_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ogradaMini_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fprofMini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fprofMini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GraveMini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GraveMini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="heroMini_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\heroMini_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Level1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Level1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Level1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Level1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Level2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Level3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profMini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profMini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

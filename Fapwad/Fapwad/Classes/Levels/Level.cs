@@ -133,10 +133,10 @@ namespace Fapwad.Classes.Levels
             Hero.MoveIndexes(Rectangles,characters);
         }
 
-        public void MoveHero(String direction)
+        /*public void MoveHero(String direction)
         {
-            Hero.Move(Width,Height,direction,Rectangles);
-        }
+            //Hero.Move(Width,Height,direction,Rectangles);
+        }*/
         
         public void EnemyFires()
         {

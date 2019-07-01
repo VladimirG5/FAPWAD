@@ -13,9 +13,10 @@ namespace Fapwad
 {
     public partial class Form1 : Form
     {
-        public GameClass gameClass { get; set; }
-        public Timer timer { get; set; }
-        public int count { get; set; }
+        public GameClass gameClass;
+        public Timer timer;
+        public Timer timerEnemyShoot;
+        public int count;
 
         public Form1()
         {
@@ -24,44 +25,37 @@ namespace Fapwad
             this.DoubleBuffered = true;
             this.BackgroundImage = Properties.Resources.Level1;
             InitializeComponent();
+            this.Location = new Point(0, 0);
+            this.Height = 1080;
+            this.Width = 1000;
+
             timer = new Timer();
             timer.Enabled = true;
             timer.Interval = 50;
-            this.Location = new Point(0, 0);
-            this.Height = 1000;
-            this.Width = 1000;
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
             
+
         }
+
+        
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if (e.KeyCode.Equals(Keys.Up))
+            if (e.KeyCode.Equals(Keys.N))
             {
-                gameClass.MoveHero("UP");
+                gameClass.updateLevel();
             }
-            else if (e.KeyCode.Equals(Keys.Down))
-            {
-                gameClass.MoveHero("DOWN");
-            }
-            else if (e.KeyCode.Equals(Keys.Left))
-            {
-                gameClass.MoveHero("LEFT");
-            }
-            else if (e.KeyCode.Equals(Keys.Right))
-            {
-                gameClass.MoveHero("RIGHT");
-            }
-            
+            gameClass.MoveHero(e.KeyCode.ToString().ToUpper());
             Invalidate(true);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Da se opraj nekako
             if(gameClass.currentLevel.ID == 2)
             {
+                
                 this.BackgroundImage = Properties.Resources.Level2;
             }
             if(gameClass.currentLevel.ID == 3)
@@ -73,9 +67,9 @@ namespace Fapwad
             gameClass.currentLevel.Dying();
 
             gameClass.CheckLevel();
-            if(count % 10 == 0)
+            if(count % 15 == 0)
                 gameClass.EnemyFires();
-           
+            
             Invalidate(true);
 
         }
@@ -98,6 +92,11 @@ namespace Fapwad
                 gameClass.HeroFires();
                 Invalidate(true);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

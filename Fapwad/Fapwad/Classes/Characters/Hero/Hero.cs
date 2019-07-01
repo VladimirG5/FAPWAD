@@ -133,7 +133,46 @@ namespace Fapwad.Classes.Characters.Hero
             Die();
         }
 
-        public void Move(int width, int height, String direction, List<Obstacles.Rectangle> rectangles)
+        public void moveUp(List<Obstacles.Rectangle> rectangles)
+        {
+            int oldY = this.Y;
+            this.Y -= 10;
+            if (IsCollided(rectangles) || this.Y < 0)
+            {
+                this.Y = oldY;
+            }
+        }
+
+        public void moveDown(int height,List<Obstacles.Rectangle> rectangles)
+        {
+            int oldY = this.Y;
+            this.Y += 10;
+            if (IsCollided(rectangles) || this.Y > height - characterHeight)
+            {
+                this.Y = oldY;
+            }
+        }
+
+        public void moveLeft(List<Obstacles.Rectangle> rectangles)
+        {
+            int oldX = this.X;
+            this.X -= 10;
+            if (IsCollided(rectangles) || this.X < 0)
+            {
+                this.X = oldX;
+            }
+        }
+
+        public void moveRight(int width, List<Obstacles.Rectangle> rectangles)
+        {
+            int oldX = this.X;
+            this.X += 10;
+            if (IsCollided(rectangles) || this.X > width - characterWidth)
+            {
+                this.X = oldX;
+            }
+        }
+        /*public void Move(int width, int height, String direction, List<Obstacles.Rectangle> rectangles)
         {
             int oldX = this.X;
             int oldY = this.Y;
@@ -169,10 +208,9 @@ namespace Fapwad.Classes.Characters.Hero
                     this.X = oldX;
                 }
 
-            }
+            }    
+        }*/
 
-            
-        }
         public void GradeUp(bool isHit)
         {
             if (isHit && Grade > 5)
