@@ -18,6 +18,8 @@ namespace Fapwad.Classes.Levels
     {
         public List<EnemyClass> characters;
         public List<Obstacles.Rectangle> Rectangles;
+        public List<Index> indices;
+        public List<ReportedSheet> reportedSheets;
         public HeroClass Hero;
         public int ID;
         public int Width;
@@ -41,6 +43,8 @@ namespace Fapwad.Classes.Levels
             // NEED TO BE CHANGED
             this.Hero = Hero;
             Rectangles = new List<Obstacles.Rectangle>();
+            this.indices = new List<Index>();
+            this.reportedSheets = new List<ReportedSheet>();
             this.levelPath = levelPath;
             this.listOfPaths = listOfPaths;
             this.obstaclePath = obstaclePath;
@@ -69,7 +73,7 @@ namespace Fapwad.Classes.Levels
                     
 
                 }
-                EnemyClass c = new EnemyClass(posX, posY, 50, 100, demage,  HP, path);
+                EnemyClass c = new EnemyClass(posX, posY, 50, 100, demage,  HP, path, Hero);
                 characters.Add(c);
             }
             
@@ -103,6 +107,17 @@ namespace Fapwad.Classes.Levels
             {
                 //Hero = null;
             }
+            for(int i = 0; i < indices.Count; i++)
+            {
+                if (indices[i].colided)
+                    indices.RemoveAt(i);
+            }
+            for(int i = 0; i < reportedSheets.Count; i++)
+            {
+                if (reportedSheets[i].colided)
+                    reportedSheets.RemoveAt(i);
+            }
+            
         }
 
         public void Draw(Graphics g)
@@ -118,6 +133,14 @@ namespace Fapwad.Classes.Levels
             {
                 r.Draw(g);
             }
+            foreach(Index i in indices)
+            {
+                i.Draw(g);
+            }
+            foreach(ReportedSheet sh in reportedSheets)
+            {
+                sh.Draw(g);
+            }
             
         }
         
@@ -127,10 +150,17 @@ namespace Fapwad.Classes.Levels
             foreach (EnemyClass c in characters)
             {
                 c.Move(0, 0, 800, 500);
-                c.MoveSheets(Rectangles, Hero);
+                //c.MoveSheets(Rectangles, Hero);
             }
-
-            Hero.MoveIndexes(Rectangles,characters);
+            foreach(Index i in indices)
+            {
+                i.MoveIndex(Rectangles, characters);
+            }
+            foreach(ReportedSheet sh in reportedSheets)
+            {
+                sh.MoveSheets(Rectangles, Hero);
+            }
+            //Hero.MoveIndexes(Rectangles,characters);
         }
 
         /*public void MoveHero(String direction)
@@ -143,8 +173,16 @@ namespace Fapwad.Classes.Levels
             int br = rand.Next(0, characters.Count + 1);
             for(int i = 0; i < br; i++)
             {
-                characters[i].Fire();
+                ReportedSheet sheet = null;
+                sheet = characters[i].Fire();
+                reportedSheets.Add(sheet);
             }
+        }
+        public void HeroFires()
+        {
+            Index index = null;
+            index = Hero.Fire();
+            indices.Add(index);
         }
     }
 }

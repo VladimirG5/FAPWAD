@@ -24,8 +24,7 @@ namespace Fapwad.Classes.Characters.Hero
         public int characterWidth;
         public int characterHeight;
         public String ImagePath;
-
-        public List<Index> indices;
+        //public List<Index> indices;
         public bool isDead;
         public double Grade;
         public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP, String ImagePath) 
@@ -38,7 +37,7 @@ namespace Fapwad.Classes.Characters.Hero
             this.Health = HP;
             this.ImagePath = ImagePath;
 
-            indices = new List<Index>();
+            //indices = new List<Index>();
             isDead = false;
             Grade = 5.0;
         }
@@ -56,29 +55,36 @@ namespace Fapwad.Classes.Characters.Hero
 
             Object O = Resources.ResourceManager.GetObject(ImagePath);
             Image image = new Bitmap((Image)O);
+            //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
              g.DrawImageUnscaled(image, X, Y);
-            /*Image image = new Bitmap(Properties.Resources.Untitled);
-            TextureBrush tBrush = new TextureBrush(image);
-            tBrush.WrapMode = System.Drawing.Drawing2D.WrapMode.Clamp;
+           
 
-            g.FillRectangle(tBrush, X, Y, characterWidth, characterHeight);*/
-            foreach (Index i in indices)
+           
+            /*Image image = new Bitmap(Properties.Resources.Untitled);
+           tBrush.WrapMode = System.Drawing.Drawing2D.WrapMode.Tile;
+             TextureBrush tBrush = new TextureBrush(image);
+            g.FillRectangle(tBrush, X, Y, characterWidth, characterHeight);
+            tBrush.Dispose();
+
+            */
+            /*foreach (Index i in indices)
             {
                 i.Draw(g);
-            }
+            }*/
         }
 
 
-       public  void Fire()
-        {
+         public  Index Fire()
+         {
           
-                // WIDTH AND HEIGHT TO BE DONE
-                Index new_Index = new Index(X + 12, Y - 50, 25, 50);
-                indices.Add(new_Index);
-                // TO BE DONE !
+            // WIDTH AND HEIGHT TO BE DONE
+            Index new_Index = new Index(X + 12, Y - 50, 25, 50, this);
+            return new_Index;    
+            //indices.Add(new_Index);
+            // TO BE DONE !
             
             
-        }
+         }
      
 
         private bool distance(int recX, int recY, int recWidth, int recHeight)
@@ -107,7 +113,7 @@ namespace Fapwad.Classes.Characters.Hero
 
         
 
-        public void MoveIndexes(List<Obstacles.Rectangle> rectangles, List<EnemyClass> enemies)
+        /*public void MoveIndexes(List<Obstacles.Rectangle> rectangles, List<EnemyClass> enemies)
         {
             foreach (Index i in indices)
             {
@@ -125,7 +131,7 @@ namespace Fapwad.Classes.Characters.Hero
                 }
             
             
-        }
+        }*/
 
         public void Hurt(int demage)
         {

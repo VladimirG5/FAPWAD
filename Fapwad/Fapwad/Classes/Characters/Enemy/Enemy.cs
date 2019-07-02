@@ -16,7 +16,7 @@ namespace Fapwad.Classes.Characters.Enemy
 {
     public class EnemyClass 
     {
-        public List<ReportedSheet> reportedSheets;
+        //public List<ReportedSheet> reportedSheets;
 
         public int X;
         public int Y;
@@ -31,8 +31,9 @@ namespace Fapwad.Classes.Characters.Enemy
         private double velocityX;
         private double velocityY;
         Random rand = new Random();
-        public bool isDead;   
-        public EnemyClass(int x, int y, int characterWidth, int characterHeight, int demage, int HP, String ImagePath)
+        public bool isDead;
+        public HeroClass Hero;
+        public EnemyClass(int x, int y, int characterWidth, int characterHeight, int demage, int HP, String ImagePath, HeroClass Hero)
         {
             this.X = x;
             this.Y = y;
@@ -41,6 +42,7 @@ namespace Fapwad.Classes.Characters.Enemy
             this.WeaponStrength = demage;
             this.Health = HP;
             this.ImagePath = ImagePath;
+            this.Hero = Hero;
 
 
             velocity = 5;
@@ -48,7 +50,7 @@ namespace Fapwad.Classes.Characters.Enemy
             velocityX = (Math.Cos(Angle) * velocity);
             velocityY = (Math.Sin(Angle) * velocity);
             isDead = false;
-            reportedSheets = new List<ReportedSheet>();
+            //reportedSheets = new List<ReportedSheet>();
         }
         public  void Die()
         {
@@ -65,20 +67,22 @@ namespace Fapwad.Classes.Characters.Enemy
         {
             Object O = Resources.ResourceManager.GetObject(ImagePath);
             Image image = new Bitmap((Image)O);
+            //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
             g.DrawImageUnscaled(image, X, Y);
-            foreach(ReportedSheet sheet in reportedSheets)
+            /*foreach(ReportedSheet sheet in reportedSheets)
             {
                 sheet.Draw(g);
-            }
+            }*/
         }
 
        
 
-        public  void Fire()
+        public  ReportedSheet Fire()
         {
-            
-            ReportedSheet new_ReportedSheet = new ReportedSheet(X + 12, Y + 50, 25, 50);
-            reportedSheets.Add(new_ReportedSheet);
+           // TO BE DONE !
+            ReportedSheet new_ReportedSheet = new ReportedSheet(X + 12, Y + 50, 25, 50, Hero, WeaponStrength);
+            return new_ReportedSheet;
+           // reportedSheets.Add(new_ReportedSheet);
             
         }
 
@@ -93,8 +97,9 @@ namespace Fapwad.Classes.Characters.Enemy
                    (this.Y < recY + recHeight);
 
         }
+        
 
-        public void MoveSheets(List<Obstacles.Rectangle> rectangles, HeroClass Hero)
+        /*public void MoveSheets(List<Obstacles.Rectangle> rectangles, HeroClass Hero)
         {
             foreach (ReportedSheet sheet in reportedSheets)
             {
@@ -113,7 +118,7 @@ namespace Fapwad.Classes.Characters.Enemy
                 }
            
             
-        }
+        }*/
 
         public  bool IsCollided(List<Obstacles.Rectangle> rectangles)
         {

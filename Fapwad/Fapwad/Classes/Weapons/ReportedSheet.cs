@@ -19,7 +19,9 @@ namespace Fapwad.Classes.Weapons
         public int reportedSheetWidth;
         public int reportedSheetHeight;
         public bool colided;
-        public ReportedSheet(int x, int y, int width, int height)
+        public HeroClass Hero;
+        public int demage;
+        public ReportedSheet(int x, int y, int width, int height, HeroClass Hero, int demage)
         {
             this.X = x;
             this.Y = y;
@@ -27,6 +29,8 @@ namespace Fapwad.Classes.Weapons
             this.Height = height;
             this.reportedSheetWidth = 25;
             this.reportedSheetHeight = 50;
+            this.Hero = Hero;
+            this.demage = demage;
             colided = false;
         }
 
@@ -34,13 +38,39 @@ namespace Fapwad.Classes.Weapons
         {
             // TO BE IMPLEMENTED
             Brush solid = new SolidBrush(Color.Black);
+            //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
             g.FillRectangle(solid, X, Y, reportedSheetWidth, reportedSheetHeight);
             solid.Dispose();
         }
-        public void Move()
+        /*public void Move()
         {
             // TO BE IMPLEMENTED
             this.Y = Y + 5;
+        }*/
+
+        public void MoveSheets(List<Obstacles.Rectangle> rectangles, HeroClass Hero)
+        {
+            this.Y = Y + 5;
+            this.IsCollided(rectangles);
+            this.HitAHero(Hero, this.demage);
+            /*foreach (ReportedSheet sheet in reportedSheets)
+            {
+                sheet.Move();
+                sheet.IsCollided(rectangles);
+                sheet.HitAHero(Hero, this.WeaponStrength);
+            }
+
+            // FROM LEVEL !!!
+
+            for (int i = 0; i < reportedSheets.Count; i++)
+            {
+                if (reportedSheets[i].colided)
+                {
+                    reportedSheets.RemoveAt(i);
+                }
+            }*/
+
+
         }
 
         public void HitAHero(HeroClass Hero, int demage)

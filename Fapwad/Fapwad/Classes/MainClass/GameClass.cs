@@ -65,12 +65,13 @@ namespace Fapwad.Classes.MainClass
                 currentLevel = thirdLevel;
             }
         }
-        public void CheckLevel()
+        public int CheckLevel()
         {
             if(currentLevel.characters.Count == 0)
             {
                 updateLevel();
             }
+            return this.ID;
         }
         // TICK CALL
         public void MoveObjects()
@@ -110,7 +111,7 @@ namespace Fapwad.Classes.MainClass
         // HERO FIRES !!!
         public void HeroFires()
         {
-            Hero.Fire();
+            currentLevel.HeroFires();
         }
 
         public void EnemyFires()

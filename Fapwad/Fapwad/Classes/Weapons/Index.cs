@@ -19,8 +19,9 @@ namespace Fapwad.Classes.Weapons
         public int Width;
         public int Height;
         public bool colided;
+        public HeroClass Hero;
 
-        public Index(int x, int y, int width, int height)
+        public Index(int x, int y, int width, int height, HeroClass Hero)
         {
             this.X = x;
             this.Y = y;
@@ -29,6 +30,7 @@ namespace Fapwad.Classes.Weapons
             this.Width = width;
             this.Height = height;
             this.colided = false;
+            this.Hero = Hero;
 
         }
 
@@ -36,13 +38,38 @@ namespace Fapwad.Classes.Weapons
         {
             // TO BE IMPLEMENTED
             Brush solid = new SolidBrush(Color.Red);
+            //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
             g.FillRectangle(solid, X, Y, indexWidth, indexHeight);
             solid.Dispose();
         }
-        public void Move()
+        /*public void Move()
         {
             // TO BE IMPLEMENTED
             this.Y = Y - 5;
+        }*/
+        public void MoveIndex(List<Obstacles.Rectangle> rectangles, List<EnemyClass> enemies)
+        {
+            this.Y = Y - 5;
+            this.IsCollided(rectangles);
+            this.HitAnEnemy(enemies, Hero);
+            /*foreach (Index i in indices)
+            {
+                i.Move();
+                i.IsCollided(rectangles);
+                i.HitAnEnemy(enemies, this);
+            }
+
+            THIS IS AT LEVEL  !!!!
+
+            for (int i = 0; i < indices.Count; i++)
+            {
+                if (indices[i].colided)
+                {
+                    indices.RemoveAt(i);
+                }
+            }*/
+
+
         }
 
         public void HitAnEnemy(List<EnemyClass> enemies, HeroClass Hero)
@@ -79,7 +106,7 @@ namespace Fapwad.Classes.Weapons
 
         }
 
-        public void HitAnEnemy(List<EnemyClass> enemies, int demage)
+       /* public void HitAnEnemy(List<EnemyClass> enemies, int demage)
         {
             foreach (EnemyClass enemy in enemies)
             {
@@ -91,10 +118,11 @@ namespace Fapwad.Classes.Weapons
                 
             }
             
-        }
+        }*/
 
         private bool IsHit(int recX, int recY, int recWidth, int recHeight)
         {
+            //int recX, int recY, int recWidth, int recHeight
             return (recX < this.X + this.Width) &&
                    (this.X < (recX + recWidth)) &&
                    (recY < this.Y + this.Height) &&

@@ -28,3 +28,13 @@ E:\Borce Proekt\Proektot\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.GenerateRe
 E:\Borce Proekt\Proektot\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.CoreCompileInputs.cache
 E:\Borce Proekt\Proektot\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.exe
 E:\Borce Proekt\Proektot\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.pdb
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\bin\Debug\Fapwad.exe.config
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\bin\Debug\Fapwad.exe
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\bin\Debug\Fapwad.pdb
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.csprojAssemblyReference.cache
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.Form1.resources
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.Properties.Resources.resources
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.GenerateResource.cache
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.CoreCompileInputs.cache
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.exe
+C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.pdb
