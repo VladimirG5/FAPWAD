@@ -137,37 +137,42 @@ Borce Stevanoski    (171169)
 	Опис: начин на кој се добива насоката на притивникот
 
 
-    public void Move(int left, int top, int width, int height)
-        {
-            int nextX = (int)(this.X + velocityX);
-            int nextY = (int)(this.Y + velocityY);
-            int lft = left;
-            int rgt = left + width - characterWidth;
-            int tp = top;
-            int btm = top + height - characterHeight;
-            if (nextX <= lft)
-            {
-                nextX = lft + (lft - nextX);
-                velocityX = -velocityX;
-            }
-            if (nextX >= rgt)
-            {
-                nextX = rgt - (nextX - rgt);
-                velocityX = -velocityX;
-            }
-            if (nextY <= tp)
-            {
-                nextY = tp + (tp - nextY);
-                velocityY = -velocityY;
-            }
-            if (nextY >= btm)
-            {
-                nextY = btm - (nextY - btm);
-                velocityY = -velocityY;
-            }
-            this.X = nextX;
-            this.Y = nextY;
-        }
+	    public void Move(int left, int top, int width, int height)
+		{
+		
+		    int nextX = (int)(this.X + velocityX);
+		    int nextY = (int)(this.Y + velocityY);
+		    int lft = left;
+		    int rgt = left + width - characterWidth;
+		    int tp = top;
+		    int btm = top + height - characterHeight;
+
+		    if (nextX <= lft)
+		    {
+			nextX = lft + (lft - nextX);
+			velocityX = -velocityX;
+		    }
+
+		    if (nextX >= rgt)
+		    {
+			nextX = rgt - (nextX - rgt);
+			velocityX = -velocityX;
+		    }
+
+		    if (nextY <= tp)
+		    {
+			nextY = tp + (tp - nextY);
+			velocityY = -velocityY;
+		    }
+
+		    if (nextY >= btm)
+		    {
+			nextY = btm - (nextY - btm);
+			velocityY = -velocityY;
+		    }
+		    this.X = nextX;
+		    this.Y = nextY;
+		}
     
     Опис: оваа функција служи за придвижување на Противникот во случајно определена насока. Како аргументи на оваа
           функција ги добиваме границите на просторот каде што Противникот може да се движи. Потоа се проверуваат
