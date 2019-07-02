@@ -12,6 +12,7 @@ using Fapwad.Classes.Weapons;
 
 namespace Fapwad.Classes.MainClass
 {
+    [Serializable]
     public class GameClass
     {
         public Level currentLevel;
@@ -34,8 +35,8 @@ namespace Fapwad.Classes.MainClass
             this.ID = 1;
             this.Points = 0;
             this.listOfStrings = new String[]{ "fprofMini", "fprofMini", "fprofMini", "fprofMini"};
-            this.coordinates = new int[] { 350, 100, 500, 500, 400, 450 };
-            Level firstLevel = new Level(ID, Width, Height, Hero,listOfStrings,coordinates,"Level1", "ogradaMini_2");
+            this.coordinates = new int[] { 350, 100, 500, 700, 600, 650 };
+            Level firstLevel = new Level(ID, Width, Height, Hero,listOfStrings,coordinates,"Level1", "ogradaMini_1");
             currentLevel = firstLevel;
 
         }
@@ -47,7 +48,7 @@ namespace Fapwad.Classes.MainClass
                 GC.Collect();
                 ID = 2;
                 listOfStrings = new String[] { "profMini", "profMini", "profMini", "profMini" };
-                this.coordinates = new int[] { 200, 500, 600, 500};
+                this.coordinates = new int[] { 200, 500, 700, 600};
                 Level secondLevel = new Level(ID, Width, Height, Hero,listOfStrings, coordinates,"Level2", "ogradaMini_2");
                 Hero.X = 350;
                 Hero.Y = 890;
@@ -58,8 +59,8 @@ namespace Fapwad.Classes.MainClass
                 GC.Collect();
                 ID = 3;
                 listOfStrings = new String[] { "fprofMini", "fprofMini", "profMini", "profMini" };
-                this.coordinates = new int[] {350, 750};
-                Level thirdLevel = new Level(ID, Width, Height, Hero,listOfStrings,coordinates,"Level3","ogradaMini_2");
+                this.coordinates = new int[] {300, 850};
+                Level thirdLevel = new Level(ID, Width, Height, Hero,listOfStrings,coordinates,"Level3","ogradaMini_3_1");
                 Hero.X = 350;
                 Hero.Y = 950;
                 currentLevel = thirdLevel;
@@ -86,16 +87,16 @@ namespace Fapwad.Classes.MainClass
             switch (direction)
             {
                 case "UP":
-                    Hero.moveUp(currentLevel.Rectangles);
+                    Hero.moveUp(0,currentLevel.Rectangles);
                     break;
                 case "DOWN":
-                    Hero.moveDown(this.Height, currentLevel.Rectangles);
+                    Hero.moveDown(this.Height-100, currentLevel.Rectangles);
                     break;
                 case "LEFT":
-                    Hero.moveLeft(currentLevel.Rectangles);
+                    Hero.moveLeft(100,currentLevel.Rectangles);
                     break;
                 case "RIGHT":
-                    Hero.moveRight(this.Width, currentLevel.Rectangles);
+                    Hero.moveRight(this.Width-100, currentLevel.Rectangles);
                     break;
             }
             /*if (direction == "UP")
@@ -124,7 +125,10 @@ namespace Fapwad.Classes.MainClass
             currentLevel.Draw(g);
         }
 
-
+        public double getGrade()
+        {
+            return Hero.Grade;
+        }
 
 
     }

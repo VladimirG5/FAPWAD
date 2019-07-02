@@ -14,6 +14,7 @@ using System.Reflection;
 
 namespace Fapwad.Classes.Characters.Enemy
 {
+    [Serializable]
     public class EnemyClass 
     {
         //public List<ReportedSheet> reportedSheets;

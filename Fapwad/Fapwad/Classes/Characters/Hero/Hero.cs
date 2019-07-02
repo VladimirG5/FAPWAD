@@ -13,7 +13,7 @@ using Fapwad.Classes.Weapons;
 using Fapwad.Properties;
 namespace Fapwad.Classes.Characters.Hero
 {
-
+    [Serializable]
     public class HeroClass
 
     {
@@ -27,6 +27,7 @@ namespace Fapwad.Classes.Characters.Hero
         //public List<Index> indices;
         public bool isDead;
         public double Grade;
+        private Random rand;
         public HeroClass(int x, int y, int characterWidth, int characterHeight ,int demage, int HP, String ImagePath) 
         {
             this.X = x;
@@ -36,7 +37,7 @@ namespace Fapwad.Classes.Characters.Hero
             this.WeaponStrength = demage;
             this.Health = HP;
             this.ImagePath = ImagePath;
-
+            rand = new Random();
             //indices = new List<Index>();
             isDead = false;
             Grade = 5.0;
@@ -52,7 +53,8 @@ namespace Fapwad.Classes.Characters.Hero
        
         public  void Draw(Graphics g)
         {
-
+            if (isDead)
+                ImagePath = "GraveMini";
             Object O = Resources.ResourceManager.GetObject(ImagePath);
             Image image = new Bitmap((Image)O);
             //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
@@ -139,11 +141,11 @@ namespace Fapwad.Classes.Characters.Hero
             Die();
         }
 
-        public void moveUp(List<Obstacles.Rectangle> rectangles)
+        public void moveUp(int top,List<Obstacles.Rectangle> rectangles)
         {
             int oldY = this.Y;
-            this.Y -= 10;
-            if (IsCollided(rectangles) || this.Y < 0)
+            this.Y -= rand.Next(10,50);
+            if (IsCollided(rectangles) || this.Y < top)
             {
                 this.Y = oldY;
             }
@@ -152,18 +154,18 @@ namespace Fapwad.Classes.Characters.Hero
         public void moveDown(int height,List<Obstacles.Rectangle> rectangles)
         {
             int oldY = this.Y;
-            this.Y += 10;
+            this.Y += rand.Next(10, 50); ;
             if (IsCollided(rectangles) || this.Y > height - characterHeight)
             {
                 this.Y = oldY;
             }
         }
 
-        public void moveLeft(List<Obstacles.Rectangle> rectangles)
+        public void moveLeft(int left,List<Obstacles.Rectangle> rectangles)
         {
             int oldX = this.X;
-            this.X -= 10;
-            if (IsCollided(rectangles) || this.X < 0)
+            this.X -= rand.Next(10, 50); ;
+            if (IsCollided(rectangles) || this.X < left)
             {
                 this.X = oldX;
             }
@@ -172,7 +174,7 @@ namespace Fapwad.Classes.Characters.Hero
         public void moveRight(int width, List<Obstacles.Rectangle> rectangles)
         {
             int oldX = this.X;
-            this.X += 10;
+            this.X += rand.Next(10, 50); ;
             if (IsCollided(rectangles) || this.X > width - characterWidth)
             {
                 this.X = oldX;

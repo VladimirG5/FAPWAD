@@ -88,6 +88,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Bubblegum.ttf" />
     <None Include="Resources\student.png" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +135,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\heroMini_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ogradaMini_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ogradaMini_3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Index.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReportedSheet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

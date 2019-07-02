@@ -13,7 +13,7 @@ using Fapwad.Classes.Weapons;
 
 namespace Fapwad.Classes.Levels
 {
-    
+    [Serializable]
     public class Level
     {
         public List<EnemyClass> characters;
@@ -50,7 +50,15 @@ namespace Fapwad.Classes.Levels
             this.obstaclePath = obstaclePath;
             this.obstacleCoordinates = obstacleCoordinates;
             AddCharacter(100, 100, 450, 400);
-            AddRectangle(obstacleCoordinates,100,50,obstaclePath);
+            if (ID == 3)
+            {
+                AddRectangle(obstacleCoordinates, 130, 65, obstaclePath);
+            }
+            else
+            {
+                AddRectangle(obstacleCoordinates, 100, 50, obstaclePath);
+            }
+            
             
             
 
@@ -94,7 +102,7 @@ namespace Fapwad.Classes.Levels
             }
             
         }
-        public void Dying()
+        public Boolean Dying()
         {
             for(int i = 0; i < characters.Count; i++)
             {
@@ -105,7 +113,8 @@ namespace Fapwad.Classes.Levels
             }
             if (Hero.isDead)
             {
-                //Hero = null;
+                return true;
+
             }
             for(int i = 0; i < indices.Count; i++)
             {
@@ -117,7 +126,9 @@ namespace Fapwad.Classes.Levels
                 if (reportedSheets[i].colided)
                     reportedSheets.RemoveAt(i);
             }
-            
+
+            return false;
+
         }
 
         public void Draw(Graphics g)
@@ -149,7 +160,15 @@ namespace Fapwad.Classes.Levels
         {
             foreach (EnemyClass c in characters)
             {
-                c.Move(0, 0, 800, 500);
+                
+                int heightNew = 400;
+                int topNew = 50;
+                if (ID == 3)
+                {
+                    heightNew = 500;
+                    topNew = 320;
+                }
+                c.Move(100, topNew, 650, heightNew);
                 //c.MoveSheets(Rectangles, Hero);
             }
             foreach(Index i in indices)

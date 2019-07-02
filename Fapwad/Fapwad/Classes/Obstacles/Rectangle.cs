@@ -8,6 +8,7 @@ using Fapwad.Properties;
 
 namespace Fapwad.Classes.Obstacles
 {
+    [Serializable]
     public class Rectangle
     {
 

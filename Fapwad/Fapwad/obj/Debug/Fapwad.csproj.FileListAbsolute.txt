@@ -38,3 +38,13 @@ C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.c
 C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.CoreCompileInputs.cache
 C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.exe
 C:\Users\vladi\OneDrive\Desktop\BUSDRIVE\origin\Fapwad\Fapwad\obj\Debug\Fapwad.pdb
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\bin\Debug\Fapwad.exe.config
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\bin\Debug\Fapwad.exe
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\bin\Debug\Fapwad.pdb
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csprojAssemblyReference.cache
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.Form1.resources
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.Properties.Resources.resources
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.GenerateResource.cache
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.csproj.CoreCompileInputs.cache
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.exe
+D:\Finki\4_Semestar\Vizuelno Programiranje\Proekt\ProjectUpdated\FAPWAD\Fapwad\Fapwad\obj\Debug\Fapwad.pdb

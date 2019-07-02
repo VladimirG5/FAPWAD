@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using Fapwad.Classes;
 using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Characters.Enemy;
+using Fapwad.Properties;
 
 namespace Fapwad.Classes.Weapons
 {
+    [Serializable]
     public class Index
     {
         public int X;
@@ -37,10 +39,13 @@ namespace Fapwad.Classes.Weapons
         public void Draw(Graphics g)
         {
             // TO BE IMPLEMENTED
-            Brush solid = new SolidBrush(Color.Red);
+            Object O = Resources.ResourceManager.GetObject("Index");
+            Image image = new Bitmap((Image)O);
+            g.DrawImageUnscaled(image, X, Y);
+            //Brush solid = new SolidBrush(Color.Red);
             //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
-            g.FillRectangle(solid, X, Y, indexWidth, indexHeight);
-            solid.Dispose();
+            // g.FillRectangle(solid, X, Y, indexWidth, indexHeight);
+            // solid.Dispose();
         }
         /*public void Move()
         {

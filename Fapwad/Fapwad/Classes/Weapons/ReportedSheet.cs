@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fapwad.Classes.Characters.Hero;
 using Fapwad.Classes.Obstacles;
-
+using Fapwad.Properties;
 namespace Fapwad.Classes.Weapons
 {
+    [Serializable]
     public class ReportedSheet
     {
         public int X;
@@ -36,11 +37,9 @@ namespace Fapwad.Classes.Weapons
 
         public void Draw(Graphics g)
         {
-            // TO BE IMPLEMENTED
-            Brush solid = new SolidBrush(Color.Black);
-            //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
-            g.FillRectangle(solid, X, Y, reportedSheetWidth, reportedSheetHeight);
-            solid.Dispose();
+            Object O = Resources.ResourceManager.GetObject("ReportedSheet");
+            Image image = new Bitmap((Image)O);
+            g.DrawImageUnscaled(image, X, Y);
         }
         /*public void Move()
         {
