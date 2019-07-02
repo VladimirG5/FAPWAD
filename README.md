@@ -188,7 +188,7 @@ Borce Stevanoski    (171169)
     3) Промена на големина на приказ на апликации во Windows 10
       - Десен клик -> Display Settings -> Scale and Layout -> Change the size of the text, apps and other items -> 100%
 
-1.6 Слики од играта (Screenshots):
+	1.6 Слики од играта (Screenshots):
 	    1) Прво ниво - https://prnt.sc/o9rkdj
 	    2) Второ ниво - http://prntscr.com/o9rxoo
 	    3) Трето ниво - https://prnt.sc/o9rn3d
