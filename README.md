@@ -160,7 +160,6 @@ Borce Stevanoski    (171169)
                 nextY = tp + (tp - nextY);
                 velocityY = -velocityY;
             }
-
             if (nextY >= btm)
             {
                 nextY = btm - (nextY - btm);
