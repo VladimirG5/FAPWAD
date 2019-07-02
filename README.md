@@ -109,17 +109,17 @@ Borce Stevanoski    (171169)
 
 1.4.2.1 Методи за движење 
 
-  - Движењењ на Херојот
+  - Движење на Херојот
 
-    public void moveUp(int top,List<Obstacles.Rectangle> rectangles)
-        {
-            int oldY = this.Y;
-            this.Y -= rand.Next(10,50);
-            if (IsCollided(rectangles) || this.Y < top)
-            {
-                this.Y = oldY;
-            }
-        }
+    		public void moveUp(int top,List<Obstacles.Rectangle> rectangles)
+        		{
+            		   int oldY = this.Y;
+            		   this.Y -= rand.Next(10,50);
+            		   if (IsCollided(rectangles) || this.Y < top)
+            		   {
+                		this.Y = oldY;
+            		   }
+         		}
      
     Опис: оваа функција служи за придвижување на Херојот нагоре. Повикана е преку клик на стрелката-UP.
 	  Како аргумент содржи вредност на горната граница на мапата и Листа од препреки.
@@ -145,7 +145,6 @@ Borce Stevanoski    (171169)
             int rgt = left + width - characterWidth;
             int tp = top;
             int btm = top + height - characterHeight;
-
             if (nextX <= lft)
             {
                 nextX = lft + (lft - nextX);
@@ -155,7 +154,6 @@ Borce Stevanoski    (171169)
             {
                 nextX = rgt - (nextX - rgt);
                 velocityX = -velocityX;
-
             }
             if (nextY <= tp)
             {
