@@ -37,14 +37,16 @@ namespace Fapwad
         public Boolean changed;
         public Boolean canMove;
         private String FileName;
+        
 
         public Form1()
         {
+            
             InitializeComponent();
             
             timer = new System.Windows.Forms.Timer();
             timer.Enabled = true;
-            timer.Interval = 30;
+            timer.Interval = 40;
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
             newGame();
@@ -141,16 +143,19 @@ namespace Fapwad
             {
                 if (gameClass.currentLevel.ID == 1)
                 {
+                    timer.Interval = 40;
                     this.BackgroundImage = Properties.Resources.Level1;
                     changed = false;
                 }
                 else if (gameClass.currentLevel.ID == 2)
                 {
+                    timer.Interval = 30;
                     this.BackgroundImage = Properties.Resources.Level2;
                     changed = false;
                 }
                 else if (gameClass.currentLevel.ID == 3)
                 {
+                    timer.Interval = 25;
                     this.BackgroundImage = Properties.Resources.Level3;
                     changed = false;
                 }
@@ -161,7 +166,8 @@ namespace Fapwad
             if (gameClass.currentLevel.Dying())
             {
                 canMove = false;
-                pbVictory.Image = Fapwad.Properties.Resources.ogradaMini_3;
+                pbVictory.BackColor = Color.Transparent;
+                pbVictory.Image = Fapwad.Properties.Resources.wasted;
                 pbVictory.Visible = true;
                 this.lblVictory.BackColor = Color.Transparent;
                 AllocFont(font, this.lblVictory, 30);
@@ -190,13 +196,18 @@ namespace Fapwad
 
         }
 
+        
+
         public void Victory()
         {
             if (this.ID == 3 && gameClass.currentLevel.characters.Count == 0)
             {
+                GC.Collect();
                 pbVictory.Visible = true;
+                pbVictory.BackColor = Color.Transparent;
+                pbVictory.Image = Fapwad.Properties.Resources.WinTheGame;
                 this.lblVictory.BackColor = Color.Transparent;
-                AllocFont(font, this.lblVictory, 30);
+                AllocFont(font, this.lblVictory, 30);              
                 lblVictory.Text = String.Format("Your final grade is: {0:0.0}", gameClass.getGrade());
                 lblVictory.Visible = true;
             }
@@ -270,10 +281,12 @@ namespace Fapwad
             canMove = !canMove;
             if (canMove)
             {
+                pbPause.Image = Fapwad.Properties.Resources.pause;
                 timer.Start();
             }
             else
             {
+                pbPause.Image = Fapwad.Properties.Resources.resume;
                 timer.Stop();
             }
         }

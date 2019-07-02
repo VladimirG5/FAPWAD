@@ -163,5 +163,14 @@
   <ItemGroup>
     <None Include="Resources\ReportedSheet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WinTheGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wasted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

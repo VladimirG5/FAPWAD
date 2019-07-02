@@ -166,7 +166,7 @@ namespace Fapwad.Classes.Levels
                 if (ID == 3)
                 {
                     heightNew = 500;
-                    topNew = 320;
+                    topNew = 350;
                 }
                 c.Move(100, topNew, 650, heightNew);
                 //c.MoveSheets(Rectangles, Hero);

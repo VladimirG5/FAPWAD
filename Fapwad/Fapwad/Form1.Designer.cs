@@ -30,28 +30,58 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblGrade = new System.Windows.Forms.Label();
+            this.lblVictory = new System.Windows.Forms.Label();
+            this.pbVictory = new System.Windows.Forms.PictureBox();
             this.pbQuit = new System.Windows.Forms.PictureBox();
             this.pbLoad = new System.Windows.Forms.PictureBox();
             this.pbSave = new System.Windows.Forms.PictureBox();
             this.pbPause = new System.Windows.Forms.PictureBox();
             this.pbNewGame = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblGrade = new System.Windows.Forms.Label();
-            this.pbVictory = new System.Windows.Forms.PictureBox();
-            this.lblVictory = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVictory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 16;
+            // 
+            // lblGrade
+            // 
+            this.lblGrade.AutoSize = true;
+            this.lblGrade.Location = new System.Drawing.Point(797, 989);
+            this.lblGrade.Name = "lblGrade";
+            this.lblGrade.Size = new System.Drawing.Size(35, 13);
+            this.lblGrade.TabIndex = 3;
+            this.lblGrade.Text = "label1";
+            // 
+            // lblVictory
+            // 
+            this.lblVictory.AutoSize = true;
+            this.lblVictory.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblVictory.ForeColor = System.Drawing.Color.Red;
+            this.lblVictory.Location = new System.Drawing.Point(171, 186);
+            this.lblVictory.Name = "lblVictory";
+            this.lblVictory.Size = new System.Drawing.Size(35, 13);
+            this.lblVictory.TabIndex = 5;
+            this.lblVictory.Text = "label1";
+            this.lblVictory.Visible = false;
+            // 
+            // pbVictory
+            // 
+            this.pbVictory.Location = new System.Drawing.Point(124, 36);
+            this.pbVictory.Name = "pbVictory";
+            this.pbVictory.Size = new System.Drawing.Size(550, 120);
+            this.pbVictory.TabIndex = 4;
+            this.pbVictory.TabStop = false;
+            this.pbVictory.Visible = false;
             // 
             // pbQuit
             // 
@@ -113,36 +143,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // lblGrade
-            // 
-            this.lblGrade.AutoSize = true;
-            this.lblGrade.Location = new System.Drawing.Point(797, 989);
-            this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(35, 13);
-            this.lblGrade.TabIndex = 3;
-            this.lblGrade.Text = "label1";
-            // 
-            // pbVictory
-            // 
-            this.pbVictory.Location = new System.Drawing.Point(124, 36);
-            this.pbVictory.Name = "pbVictory";
-            this.pbVictory.Size = new System.Drawing.Size(550, 120);
-            this.pbVictory.TabIndex = 4;
-            this.pbVictory.TabStop = false;
-            this.pbVictory.Visible = false;
-            // 
-            // lblVictory
-            // 
-            this.lblVictory.AutoSize = true;
-            this.lblVictory.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lblVictory.ForeColor = System.Drawing.Color.Red;
-            this.lblVictory.Location = new System.Drawing.Point(171, 186);
-            this.lblVictory.Name = "lblVictory";
-            this.lblVictory.Size = new System.Drawing.Size(35, 13);
-            this.lblVictory.TabIndex = 5;
-            this.lblVictory.Text = "label1";
-            this.lblVictory.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,13 +169,13 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.Resize += new System.EventHandler(this.Form1_Resize);
+            ((System.ComponentModel.ISupportInitialize)(this.pbVictory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQuit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNewGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVictory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
