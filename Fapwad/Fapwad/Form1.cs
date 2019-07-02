@@ -85,7 +85,7 @@ namespace Fapwad
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadFont();
-            AllocFont(font, this.lblGrade, 27);
+            AllocFont(font, this.lblGrade, 25);
 
         }
 
@@ -165,7 +165,7 @@ namespace Fapwad
                 pbVictory.Visible = true;
                 this.lblVictory.BackColor = Color.Transparent;
                 AllocFont(font, this.lblVictory, 30);
-                lblVictory.Text = "Your final grade is: " + gameClass.getGrade();
+                lblVictory.Text = String.Format("Your final grade is: {0:0.0}", gameClass.getGrade());
                 lblVictory.Visible = true;
                 timer.Stop();
             }
@@ -197,7 +197,7 @@ namespace Fapwad
                 pbVictory.Visible = true;
                 this.lblVictory.BackColor = Color.Transparent;
                 AllocFont(font, this.lblVictory, 30);
-                lblVictory.Text = "Your final grade is: " + gameClass.getGrade();
+                lblVictory.Text = String.Format("Your final grade is: {0:0.0}", gameClass.getGrade());
                 lblVictory.Visible = true;
             }
         }

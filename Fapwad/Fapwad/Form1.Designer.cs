@@ -116,7 +116,7 @@
             // lblGrade
             // 
             this.lblGrade.AutoSize = true;
-            this.lblGrade.Location = new System.Drawing.Point(806, 991);
+            this.lblGrade.Location = new System.Drawing.Point(797, 989);
             this.lblGrade.Name = "lblGrade";
             this.lblGrade.Size = new System.Drawing.Size(35, 13);
             this.lblGrade.TabIndex = 3;
