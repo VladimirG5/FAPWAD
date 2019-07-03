@@ -309,15 +309,21 @@ namespace Fapwad
 
         private void pbSave_Click(object sender, EventArgs e)
         {
-            pauseGame();
+            if(canMove)
+                pauseGame();
             FileName = null;
             saveFile();
-            pauseGame();
+            if(!canMove)
+                pauseGame();
         }
 
         private void pbLoad_Click(object sender, EventArgs e)
         {
+            if (canMove)
+                pauseGame();
             openFile();
+            if (!canMove)
+                pauseGame();
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
