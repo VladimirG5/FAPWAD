@@ -1,7 +1,7 @@
 # FAPWAD - Fight a Prof Win a Dimploma 
-Visual Programming project - by Vladimir and Borce
-Vladimir Gorgieski  (171167)
-Borce Stevanoski    (171169)
+Visual Programming project - by Vladimir and Borce</br>
+	Vladimir Gorgieski  (171167)
+	Borce Stevanoski    (171169)
 
 1. Опис на проблем
 
